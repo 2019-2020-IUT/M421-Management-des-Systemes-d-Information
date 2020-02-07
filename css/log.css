@@ -58,8 +58,10 @@ body {
     background: white;
     height: calc(100% - 40px);
     top: 20px;
+    right: -25px;
     position: relative;
     width: 50%;
+    border-radius: 10%;
 }
 
 @media (max-width: 767px) {
@@ -85,11 +87,12 @@ body {
 }
 
 .right {
-    background: #474A59;
+    background: rgb(95, 98, 110);
     box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
     color: #F1F1F2;
     position: relative;
     width: 50%;
+    border-radius: 10%;
 }
 
 @media (max-width: 767px) {
@@ -136,7 +139,7 @@ input::-moz-focus-inner {
 }
 
 #submit {
-    color: #707075;
+    color: #dadae6;
     margin-top: 40px;
     transition: color 300ms;
 }
