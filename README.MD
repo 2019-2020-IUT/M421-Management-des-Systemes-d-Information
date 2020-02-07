@@ -3,6 +3,8 @@
 
 **S**tores et **L**umières **É**lectriques **G**érées **P**ar **I**nformatique
 
+Tous les rendus Moodle sont accessible via [ce lien](https://drive.google.com/drive/folders/1JcSp-Mve2ATQmILRLdufT1rpgDF1m2j2?usp=sharing)
+
 ## Membres :
 
 - [MOREAU Benjamin](https://git-iutinfo.unice.fr/mb807967)
