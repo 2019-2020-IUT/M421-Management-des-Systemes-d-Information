@@ -1,3 +1,5 @@
+-- Partie capteurs && datas
+
 CREATE TABLE SONNERIE ( 
     id_sonnerie TINYINT NOT NULL,
     time_sonnerie DATE NOT NULL ,
@@ -45,6 +47,68 @@ CREATE TABLE ACTIVATION(
     jour DATE NOT NULL,
     PRIMARY KEY(id_objet)
 );
+
+--Partie Gestion appli
+
+CREATE TABLE CLIENT (
+    id_client TINYINT NOT NULL,
+    nom TEXT NOT NULL,
+    prénom TEXT NOT NULL,
+    mail TEXT NOT NULL,
+    psw TEXT NOT NULL,
+    date_naissance DATE NOT NULL,
+    toogle BOOLEAN NOT NULL,
+    mail_check BOOLEAN NOT NULL,
+    PRIMARY KEY(id_client)
+);
+
+CREATE TABLE LUXMETRE (
+    id_luxmetre TINYINT NOT NULL,
+    val FLOAT NOT NULL,
+    toogle BOOLEAN NOT NULL,
+    id_objet TINYINT NOT NULL,
+    PRIMARY KEY(id_luxmetre)
+);
+
+CREATE TABLE ANEMOMETRE (
+    id_anemometre TINYINT NOT NULL,
+    val FLOAT NOT NULL,
+    toogle BOOLEAN NOT NULL,
+    id_objet TINYINT NOT NULL,
+    PRIMARY KEY(id_anemometre)
+);
+
+CREATE TABLE LUXMETRE (
+    id_luxmetre TINYINT NOT NULL,
+    val FLOAT NOT NULL,
+    toogle BOOLEAN NOT NULL,
+    id_objet TINYINT NOT NULL,
+    PRIMARY KEY(id_luxmetre)
+);
+
+CREATE TABLE THERMOMETRE (
+    id_thermometre TINYINT NOT NULL,
+    val FLOAT NOT NULL,
+    toogle BOOLEAN NOT NULL,
+    id_objet TINYINT NOT NULL,
+    PRIMARY KEY(id_thermometre)
+);
+
+CREATE TABLE PROFIL (
+    id_profil TINYINT NOT NULL,
+    id_client TINYINT NOT NULL,
+    nom_profil TEXT NOT NULL,
+    photo_profil TEXT NOT NULL,
+    PRIMARY KEY(id_profil)
+);
+
+CREATE TABLE UTILISATION(
+    id_profil TINYINT NOT NULL,
+    id_objet TINYINT NOT NULL,
+    PRIMARY KEY(id_profil, id_objet)
+);
+
+-- Partie clefs étrangères
 
 ALTER TABLE ACTIVATION
     ADD CONSTRAINT idObjetChauf
