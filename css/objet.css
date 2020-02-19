@@ -1,0 +1,8 @@
+/*-------------------------------
+CSS pour toutes les pages d'objet
+-------------------------------*/
+
+.bar{
+    border-style: inset;
+    max-width: 100px;
+}
