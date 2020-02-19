@@ -1,33 +1,11 @@
--- Partie capteurs && datas
+-----------------------------
+-- Partie capteurs && datas--
+-----------------------------
 
 CREATE TABLE SONNERIE ( 
     id_sonnerie TINYINT NOT NULL,
-    time_sonnerie DATE NOT NULL ,
+    date_heure DATE NOT NULL ,
     PRIMARY KEY (id_sonnerie)
-);
-
-CREATE TABLE STORE ( 
-    id_store TINYINT NOT NULL,
-    nom_store TEXT NOT NULL,
-    activation_time_store DATE NOT NULL,
-    desactivation_time_store DATE NOT NULL,
-    PRIMARY KEY (id_store)
-);
-
-CREATE TABLE LUMIERE ( 
-    id_lum TINYINT NOT NULL,
-    nom_lum TEXT NOT NULL,
-    activation_time_lum DATE NOT NULL,
-    desactivation_time_lum DATE NOT NULL,
-    PRIMARY KEY (id_lum)
-);
-
-CREATE TABLE CHAUFFAGE ( 
-    id_chauf TINYINT NOT NULL,
-    nom_chauf TEXT NOT NULL,
-    activation_time_chauf DATE NOT NULL,
-    desactivation_time_chauf DATE NOT NULL,
-    PRIMARY KEY (id_chauf)
 );
 
 CREATE TABLE GARAGE (
@@ -37,18 +15,30 @@ CREATE TABLE GARAGE (
 );
 
 CREATE TABLE PORTAIL (
-    id_port TINYINT NOT NULL,
-    nom_port TEXT NOT NULL,
-    PRIMARY KEY(id_port)
+    id_portail TINYINT NOT NULL,
+    nom_portail TEXT NOT NULL,
+    PRIMARY KEY(id_portail)
 );
 
-CREATE TABLE ACTIVATION(
+--Table regroupant Stores Lumières Chauffage
+CREATE TABLE OBJET (
     id_objet TINYINT NOT NULL,
-    jour DATE NOT NULL,
-    PRIMARY KEY(id_objet)
+    nom_objet TEXT NOT NULL
+    PRIMARY KEY (id_objet)
 );
 
---Partie Gestion appli
+--Table pour automatisation des objets
+CREATE TABLE ACTIF(
+    id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
+    jour DATE NOT NULL,
+    heure_acti DATE NOT NULL,
+    heure_desacti DATE NOT NULL,
+    PRIMARY KEY(id_objet, jour, heure_acti)
+);
+
+------------------------
+--Partie Gestion appli--
+------------------------
 
 CREATE TABLE CLIENT (
     id_client TINYINT NOT NULL,
@@ -57,7 +47,7 @@ CREATE TABLE CLIENT (
     mail TEXT NOT NULL,
     psw TEXT NOT NULL,
     date_naissance DATE NOT NULL,
-    toogle BOOLEAN NOT NULL,
+    active BOOLEAN NOT NULL,
     mail_check BOOLEAN NOT NULL,
     PRIMARY KEY(id_client)
 );
@@ -66,7 +56,7 @@ CREATE TABLE LUXMETRE (
     id_luxmetre TINYINT NOT NULL,
     val FLOAT NOT NULL,
     toogle BOOLEAN NOT NULL,
-    id_objet TINYINT NOT NULL,
+    id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
     PRIMARY KEY(id_luxmetre)
 );
 
@@ -74,7 +64,7 @@ CREATE TABLE ANEMOMETRE (
     id_anemometre TINYINT NOT NULL,
     val FLOAT NOT NULL,
     toogle BOOLEAN NOT NULL,
-    id_objet TINYINT NOT NULL,
+    id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
     PRIMARY KEY(id_anemometre)
 );
 
@@ -82,7 +72,7 @@ CREATE TABLE LUXMETRE (
     id_luxmetre TINYINT NOT NULL,
     val FLOAT NOT NULL,
     toogle BOOLEAN NOT NULL,
-    id_objet TINYINT NOT NULL,
+    id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
     PRIMARY KEY(id_luxmetre)
 );
 
@@ -90,21 +80,21 @@ CREATE TABLE THERMOMETRE (
     id_thermometre TINYINT NOT NULL,
     val FLOAT NOT NULL,
     toogle BOOLEAN NOT NULL,
-    id_objet TINYINT NOT NULL,
+    id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
     PRIMARY KEY(id_thermometre)
 );
 
 CREATE TABLE PROFIL (
     id_profil TINYINT NOT NULL,
-    id_client TINYINT NOT NULL,
+    id_client TINYINT NOT NULL REFERENCES CLIENT (id_client),
     nom_profil TEXT NOT NULL,
     photo_profil TEXT NOT NULL,
     PRIMARY KEY(id_profil)
 );
 
 CREATE TABLE UTILISATION(
-    id_profil TINYINT NOT NULL,
-    id_objet TINYINT NOT NULL,
+    id_profil TINYINT NOT NULL REFERENCES PROFIL (id_profil),
+    id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
     PRIMARY KEY(id_profil, id_objet)
 );
 
