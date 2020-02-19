@@ -1,8 +1,60 @@
 /*-------------------------------
 CSS pour toutes les pages d'objet
 -------------------------------*/
+/*General*/
+html{
+    height: 100%;
+}
 
+body{
+    margin-top: 0px;
+    margin-right: 5px;
+    height: 100%;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*pour placer des elements d'un cote d'un element parent*/
+.fll{
+    float:left;
+    clear: right;
+}
+ 
+.flr{
+    float:right;
+    clear: left;
+    margin-right: 5px;
+}
+
+/*-----------------------------------
+bar de navigation a gauche de l'écran
+-----------------------------------*/
 .bar{
-    border-style: inset;
-    max-width: 100px;
+    border-right: solid;
+    border-width: 1px;
+    max-width: 200px;
+    height: 100%;
+}
+
+.centre{
+    text-align: center;
+    margin: auto;
+}
+
+/*div avec photo profil et nom*/
+.profil{
+    border-bottom: solid;
+    border-width: 1px;
+    margin-right: 5px;
+}
+
+/*metre un cadre à l'image*/
+img{
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    width:50px;
+    height:50px;
 }
