@@ -87,7 +87,7 @@ body {
 }
 
 .right {
-    background: rgb(95, 98, 110);
+    background: rgb(45, 59, 114);
     box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
     color: #F1F1F2;
     position: relative;
@@ -124,9 +124,22 @@ label {
 }
 
 input {
-    background: transparent;
+    background: #55489c79;
     border: 0;
-    color: #f2f2f2;
+    color: #ffffff;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    outline: none !important;
+    width: 100%;
+    padding-left: 5%;
+}
+
+input#submit {
+    background: #54489c;
+    border: 0;
+    border-radius: 70%;
+    color: #ffffff;
     font-size: 20px;
     height: 30px;
     line-height: 30px;
