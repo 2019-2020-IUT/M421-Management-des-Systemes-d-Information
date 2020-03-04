@@ -1,5 +1,5 @@
 # SLEGPI
-![logo](https://git-iutinfo.unice.fr/woutipoup/slegpi/raw/master/docs/img/logo_slegpi.png "slegpi logo")
+![logo](https://git-iutinfo.unice.fr/woutipoup/slegpi/raw/master/__OLDWEBSITE/docs/img/logo_slegpi.png "slegpi logo")
 
 **S**tores et **L**umières **É**lectriques **G**érées **P**ar **I**nformatique
 
