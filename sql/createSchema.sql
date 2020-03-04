@@ -23,7 +23,7 @@ CREATE TABLE PORTAIL (
 --Table regroupant Stores Lumières Chauffage
 CREATE TABLE OBJET (
     id_objet TINYINT NOT NULL,
-    nom_objet TEXT NOT NULL
+    nom_objet TEXT NOT NULL,
     PRIMARY KEY (id_objet)
 );
 
