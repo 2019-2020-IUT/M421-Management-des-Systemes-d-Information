@@ -29,7 +29,7 @@ body {
     font-size: 13px;
 }
 
-body#login {
+body.login {
     background-image: url('../img/login-bg.jpg');
     background-position: 50%;
     background-repeat: repeat;
