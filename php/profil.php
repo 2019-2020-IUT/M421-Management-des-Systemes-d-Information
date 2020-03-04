@@ -2,20 +2,24 @@
     include "database.php";
     include "connection.php";
 
-    $nomProfil = null;
-    $imageProfil = null;
+    $idProfil = array();
+    $nomProfil = array();
+    $imageProfil = array();
 
     $sql = "SELECT * FROM PROFIL p";
     $result = $conn->query($sql);
 
-
+    $i = 0 //pour savoir ou en est dans le tableau de profil
+    
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             //si c'est un profil associé au compte
            if ($row["id_client"] = $idClient){
-               $nomProfil = $row["nom_profil"];
-               $imageProfil = $row["photo_profil"];
+               $idProfil[$i] = $row["id_profil"];
+               $nomProfil[$i] = $row["nom_profil"];
+               $imageProfil[$i] = $row["photo_profil"];
+               $i++;
            }
         }
     } else {
