@@ -1,4 +1,8 @@
 <?php
+    /*-------------------------------------------------------------------------------------
+    Vérifier la connexion et recuperer l'id pour recuperer la bonne page de choix de profil
+    -------------------------------------------------------------------------------------*/
+
     include "database.php";
 
     $nom = $_POST["id"];
@@ -26,6 +30,8 @@
     if ($idClient == null){
         echo "Nom ou mot de passe incorecte !";
     }
+
+    //redirection vers la page de choix de profil
 
     $conn->close();
 ?>
