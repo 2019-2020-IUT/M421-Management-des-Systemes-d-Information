@@ -1,38 +1,28 @@
---------------------------
---Création des séquences--
---------------------------
---pour id_sonnerie, id_garage, id_portail et id_objet
-create sequence seqObjet increment by 1 start with 1 nomaxvalue nominvalue;
---pour id_client
-create sequence seqClient increment by 1 start with 1 nomaxvalue nominvalue;
---pour id_luxmetre, id_anemometre et id_thermometre
-create sequence seqMesure increment by 1 start with 1 nomaxvalue nominvalue;
-
 ----------------------------
 --Partie capteurs && datas--
 ----------------------------
 
 CREATE TABLE SONNERIE ( 
-    id_sonnerie TINYINT NOT NULL,
+    id_sonnerie TINYINT AUTO_INCREMENT NOT NULL,
     date_heure DATE NOT NULL ,
     PRIMARY KEY (id_sonnerie)
 );
 
 CREATE TABLE GARAGE (
-    id_garage TINYINT NOT NULL,
+    id_garage TINYINT AUTO_INCREMENT NOT NULL,
     nom_garage TEXT NOT NULL,
     PRIMARY KEY(id_garage)
 );
 
 CREATE TABLE PORTAIL (
-    id_portail TINYINT NOT NULL,
+    id_portail TINYINT AUTO_INCREMENT NOT NULL,
     nom_portail TEXT NOT NULL,
     PRIMARY KEY(id_portail)
 );
 
 --Table regroupant Stores Lumières Chauffage
 CREATE TABLE OBJET (
-    id_objet TINYINT NOT NULL,
+    id_objet TINYINT AUTO_INCREMENT NOT NULL,
     nom_objet TEXT NOT NULL,
     PRIMARY KEY (id_objet)
 );
@@ -51,7 +41,7 @@ CREATE TABLE ACTIF(
 ------------------------
 
 CREATE TABLE CLIENT (
-    id_client TINYINT NOT NULL,
+    id_client TINYINT AUTO_INCREMENT NOT NULL,
     nom TEXT NOT NULL,
     prénom TEXT NOT NULL,
     mail TEXT NOT NULL,
@@ -63,7 +53,7 @@ CREATE TABLE CLIENT (
 );
 
 CREATE TABLE LUXMETRE (
-    id_luxmetre TINYINT NOT NULL,
+    id_luxmetre TINYINT AUTO_INCREMENT NOT NULL,
     val FLOAT NOT NULL,
     toogle BOOLEAN NOT NULL,
     id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
@@ -71,7 +61,7 @@ CREATE TABLE LUXMETRE (
 );
 
 CREATE TABLE ANEMOMETRE (
-    id_anemometre TINYINT NOT NULL,
+    id_anemometre TINYINT AUTO_INCREMENT NOT NULL,
     val FLOAT NOT NULL,
     toogle BOOLEAN NOT NULL,
     id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
@@ -79,7 +69,7 @@ CREATE TABLE ANEMOMETRE (
 );
 
 CREATE TABLE THERMOMETRE (
-    id_thermometre TINYINT NOT NULL,
+    id_thermometre TINYINT AUTO_INCREMENT NOT NULL,
     val FLOAT NOT NULL,
     toogle BOOLEAN NOT NULL,
     id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
@@ -87,7 +77,7 @@ CREATE TABLE THERMOMETRE (
 );
 
 CREATE TABLE PROFIL (
-    id_profil TINYINT NOT NULL,
+    id_profil TINYINT AUTO_INCREMENT NOT NULL,
     id_client TINYINT NOT NULL REFERENCES CLIENT (id_client),
     nom_profil TEXT NOT NULL,
     photo_profil TEXT NOT NULL,
