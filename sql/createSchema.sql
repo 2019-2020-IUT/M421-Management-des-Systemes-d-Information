@@ -1,6 +1,16 @@
------------------------------
--- Partie capteurs && datas--
------------------------------
+--------------------------
+--Création des séquences--
+--------------------------
+--pour id_sonnerie, id_garage, id_portail et id_objet
+create sequence seqObjet increment by 1 start with 1 nomaxvalue nominvalue;
+--pour id_client
+create sequence seqClient increment by 1 start with 1 nomaxvalue nominvalue;
+--pour id_luxmetre, id_anemometre et id_thermometre
+create sequence seqMesure increment by 1 start with 1 nomaxvalue nominvalue;
+
+----------------------------
+--Partie capteurs && datas--
+----------------------------
 
 CREATE TABLE SONNERIE ( 
     id_sonnerie TINYINT NOT NULL,
@@ -66,14 +76,6 @@ CREATE TABLE ANEMOMETRE (
     toogle BOOLEAN NOT NULL,
     id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
     PRIMARY KEY(id_anemometre)
-);
-
-CREATE TABLE LUXMETRE (
-    id_luxmetre TINYINT NOT NULL,
-    val FLOAT NOT NULL,
-    toogle BOOLEAN NOT NULL,
-    id_objet TINYINT NOT NULL REFERENCES OBJET (id_objet),
-    PRIMARY KEY(id_luxmetre)
 );
 
 CREATE TABLE THERMOMETRE (
