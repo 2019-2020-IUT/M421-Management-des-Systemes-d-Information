@@ -12,14 +12,17 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
+            //si on a trouvé le bon compte
             if ($row["nom"] == $nom && $row["psw"] == $pwd){
                 $idClient = $row["id_client"];
+                break;
             }
         }
     } else {
         echo "Il n'y a pas de client d'enregistrer";
     }
 
+    //si il y a une erreur d'identification
     if ($idClient == null){
         echo "Nom ou mot de passe incorecte !";
     }
