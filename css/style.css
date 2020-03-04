@@ -3849,6 +3849,10 @@ ul.chat-available-user li a:hover {
     color: #fff;
 }
 
-#backstretch {
-    background-repeat: repeat;
+br#calend {
+    font-size: 206px;
+}
+
+br#profil {
+    font-size: 20px;
 }
