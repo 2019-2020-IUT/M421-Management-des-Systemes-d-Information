@@ -1,4 +1,7 @@
 <?php
+    /*--------------------------------
+    Mise à jour de nom image du profil
+    --------------------------------*/
     include "database.php";
     include "selectionProfil.php";
 
