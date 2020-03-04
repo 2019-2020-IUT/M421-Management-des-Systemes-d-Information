@@ -1,4 +1,7 @@
 <?php
+    /*------------------------------------
+    Donéée pour la connection à phpmyadmin
+    ------------------------------------*/
     $servername = "linserv-info-01";;
     $username = "sj801446";
     $password = "sj801446"; 
