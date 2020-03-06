@@ -3856,3 +3856,9 @@ br#calend {
 br#profil {
     font-size: 20px;
 }
+
+p.values {
+    font: 6em Open Sans, Impact;
+    text-transform: uppercase;
+    text-align: center;
+}
