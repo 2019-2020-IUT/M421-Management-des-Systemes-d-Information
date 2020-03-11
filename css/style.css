@@ -29,7 +29,7 @@ body {
     font-size: 13px;
 }
 
-body#login {
+body.login {
     background-image: url('../img/login-bg.jpg');
     background-position: 50%;
     background-repeat: repeat;
@@ -3849,6 +3849,16 @@ ul.chat-available-user li a:hover {
     color: #fff;
 }
 
-#backstretch {
-    background-repeat: repeat;
+br#calend {
+    font-size: 206px;
+}
+
+br#profil {
+    font-size: 20px;
+}
+
+p.values {
+    font: 6em Open Sans, Impact;
+    text-transform: uppercase;
+    text-align: center;
 }
