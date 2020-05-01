@@ -1,5 +1,5 @@
 # SLEGPI
-![logo](https://git-iutinfo.unice.fr/woutipoup/slegpi/raw/master/__OLDWEB/docs/img/logo_slegpi.png "slegpi logo")
+![logo](https://github.com/2019-2020-IUT/M421-Management-des-Systemes-d-Information/blob/master/img/logo.png)
 
 **S**tores et **L**umières **É**lectriques **G**érées **P**ar **I**nformatique
 
