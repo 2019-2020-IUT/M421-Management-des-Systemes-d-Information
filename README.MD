@@ -9,7 +9,7 @@ Tous les rendus Moodle sont accessible via [ce lien](https://drive.google.com/dr
 
 - [MOREAU Benjamin](https://git-iutinfo.unice.fr/mb807967)
 - [RELEVAT Chiarra](https://git-iutinfo.unice.fr/rc804998)
-- [SRIFI Josée](https://git-iutinfo.unice.fr/sj801446)
+- [SRIFI Pauline](https://git-iutinfo.unice.fr/sj801446)
 
 ## LICENSE :
 
